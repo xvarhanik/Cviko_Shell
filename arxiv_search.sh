@@ -8,12 +8,11 @@ done
 toFind+="&searchtype=all&source=header";
 arxRegExp="arXiv:[^<]+"
 
+wget -q -O - "$toFind" | grep -E -o "$arxRegExp" | sed 's/arXiv://' | sort -u
 
-wget -q -O - "$toFind" | grep -E -o "$arxRegExp" | sed 'arXiv:' | sort -u
-
-
-
+#sort -u sa tu nachadza v pripade ze z nejakeho dôvodu  su 2 cisla rovnake
 
 
 
 
+ 
